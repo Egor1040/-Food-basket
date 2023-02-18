@@ -60,6 +60,7 @@ console.log('***************************');
 console.log('Середня ціна товару: ' + middlePrice);
 console.log('Товарів дорожче 100 - ' + counterNumberExpensive);
 console.log('Товарів дешевше 50 - ' + counterNumberCheaper);
+console.log('***************************');
 console.log('Самий дорогий товар - ' + moreExpensProductName + ' ' + moreExpensProduct + ' Купили шт: ' + moreExpensProductNumber);
 console.log('Самий дешевий товар - ' + moreCheaperProductName + ' ' + moreCheaperProduct + ' Купили шт ' + moreCheaperProductNumber);
 
