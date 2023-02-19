@@ -12,13 +12,12 @@ let sumProd = 0;
 let sumInBasket = 0;
 let sumNumberProd = 0;
 let middlePrice = 0;
-let moreExpensProduct = 0;
-let moreExpensProductName = '';
-let moreExpensProductNumber = 0;
-let moreCheaperProduct = 30;
-let moreCheaperProductName = '';
-let moreCheaperProductNumber = 0;
-
+let moreExpensProduct = products[0][2];
+let moreExpensProductName = products[0][0];
+let moreExpensProductNumber = products[0][1];
+let moreCheaperProduct = products[0][2];
+let moreCheaperProductName = products[0][0];
+let moreCheaperProductNumber = products[0][1];
 
 for (i = 0; i < products.length; i++) {
     counter++;
