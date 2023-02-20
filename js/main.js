@@ -5,7 +5,6 @@ let products = [
     ['Сало', 1, 150],
 ];
 
-let counter = 0;
 let counterNumberExpensive = 0;
 let counterNumberCheaper = 0;
 let sumProd = 0;
@@ -13,18 +12,15 @@ let sumInBasket = 0;
 let sumNumberProd = 0;
 let middlePrice = 0;
 let moreExpensProduct = products[0][2];
-let moreExpensProductName = products[0][0];
+let moreExpensProductName, moreCheaperProductName;
 let moreExpensProductNumber = products[0][1];
 let moreCheaperProduct = products[0][2];
-let moreCheaperProductName = products[0][0];
 let moreCheaperProductNumber = products[0][1];
 
 for (i = 0; i < products.length; i++) {
-    counter++;
     let nameProduct = products[i][0];
     let numberProduct = products[i][1];
     let costProduct = products[i][2];
-    let totalCost = numberProduct * costProduct;
 
     sumProd += products[i][1];
     sumInBasket += products[i][1] * products[i][2];
@@ -39,17 +35,32 @@ for (i = 0; i < products.length; i++) {
         counterNumberCheaper++;
     }
     
-    if (costProduct > moreExpensProduct) {
+    if (costProduct >= moreExpensProduct) {
         moreExpensProductName = nameProduct;
         moreExpensProduct = costProduct;
         moreExpensProductNumber = numberProduct;
     }
-    if (costProduct < moreCheaperProduct) {
+    if (costProduct <= moreCheaperProduct) {
         moreCheaperProductName = nameProduct;
         moreCheaperProduct = costProduct;
         moreCheaperProductNumber = numberProduct;
     }
-    console.log(counter + '.', nameProduct, numberProduct + 'x' + costProduct, ' = ', totalCost);
+}
+
+for (i = 0; i < products.length; i++) {
+    let nameProduct = products[i][0];
+    let numberProduct = products[i][1];
+    let costProduct = products[i][2];
+    let totalCost = numberProduct * costProduct;
+
+    if (costProduct === moreExpensProduct) {
+        totalCost += ' +';
+    }
+    if (costProduct === moreCheaperProduct) {
+        totalCost += ' -';
+    }
+
+    console.log(i + 1 + '.', nameProduct, numberProduct + 'x' + costProduct, ' = ' + totalCost);
 }
 
 console.log('***************************');
@@ -62,9 +73,6 @@ console.log('Товарів дешевше 50 - ' + counterNumberCheaper);
 console.log('***************************');
 console.log('Самий дорогий товар - ' + moreExpensProductName + ' ' + moreExpensProduct + ' Купили шт: ' + moreExpensProductNumber);
 console.log('Самий дешевий товар - ' + moreCheaperProductName + ' ' + moreCheaperProduct + ' Купили шт ' + moreCheaperProductNumber);
-
-
-
 
 /*
 ТЕХ Завдання!
